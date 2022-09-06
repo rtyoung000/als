@@ -6,7 +6,7 @@
                     <n-grid x-gap="12" cols="1 s:1 m:1 l:3" responsive="screen">
                         <n-gi span="1 s:1 m:1 l:2">
                             <div>
-                                <h4>下行</h4>
+                                <h4>Down</h4>
                                 <h1>{{ h5Download }} Mbps</h1>
                                 <apexchart type="line" :options="h5SpeedtestDownloadSpeedChart.chartOptions"
                                     height="200px" :series="h5SpeedtestDownloadSpeedChart.series">
@@ -27,7 +27,7 @@
                 <!-- <h3>下行:
                     <n-number-animation :to="h5Download" />
                 </h3>
-                <h3>上行: {{ h5Upload }}</h3> -->
+                <h3>Up: {{ h5Upload }}</h3> -->
                 <n-button size="large" @click="startOrStopSpeedtest" style="margin-top: 10px;">
                     <n-spin size="small" v-show="h5SpeedWorker !== null" style="margin-right: 10px;" /> {{
                     h5SpeedtestButtonText
