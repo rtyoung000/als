@@ -6,7 +6,7 @@ RUN npm i && \
     npm run build
 
 FROM alpine:3.16
-LABEL maintainer="samlm0 <update@ifdream.net>"
+LABEL maintainer="shaggygb <noreply@southerncrossdata.com>"
 
 RUN apk add --no-cache php81 php81-pecl-maxminddb php81-ctype php81-pecl-swoole nginx xz \
     iperf iperf3 \
