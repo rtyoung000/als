@@ -6,14 +6,14 @@
                     <n-card :title="interfaceName">
                         <n-grid x-gap="12" :cols="2">
                             <n-gi>
-                                <h3>已接收</h3>
+                                <h3>Received</h3>
                                 <span class="traffic-display">
                                     {{ formatBytes(interfaceData.traffic.receive, 2, true) }} /
                                     {{ formatBytes(interfaceData.receive) }}
                                 </span>
                             </n-gi>
                             <n-gi>
-                                <h3>已发送</h3>
+                                <h3>Sent</h3>
                                 <span class="traffic-display">
                                     {{ formatBytes(interfaceData.traffic.send, 2, true) }} /
                                     {{ formatBytes(interfaceData.send) }}
