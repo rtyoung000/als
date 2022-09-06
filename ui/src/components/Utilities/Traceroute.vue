@@ -24,7 +24,7 @@
                         <td>
                             <n-space vertical>
                                 <n-gradient-text v-show="record.host.length > 1" type="info">
-                                    ! 基于流的负载均衡已发现
+                                    ! Flow-Based Load Balancing Discovered
                                 </n-gradient-text>
                                 <template v-for="pop in record.host">
                                     <span>{{ pop.dns }} ({{ pop.host }}) | {{ pop.geo }}</span>
