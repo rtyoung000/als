@@ -1,7 +1,7 @@
 <template>
     <n-card title="Server Speedtest">
         <div>
-            <n-card title="HTML 5 在线测速" style="margin-bottom: 10px;">
+            <n-card title="HTML 5 Speedtest" style="margin-bottom: 10px;">
                 <div v-show="h5Download !== '...'">
                     <n-grid x-gap="12" cols="1 s:1 m:1 l:3" responsive="screen">
                         <n-gi span="1 s:1 m:1 l:2">
@@ -15,7 +15,7 @@
                         </n-gi>
                         <n-gi span="1">
                             <div>
-                                <h4>上行</h4>
+                                <h4>Upload</h4>
                                 <h1>{{ h5Upload }} Mbps</h1>
                                 <apexchart type="line" :options="h5SpeedtestUploadSpeedChart.chartOptions"
                                     height="200px" :series="h5SpeedtestUploadSpeedChart.series">
@@ -36,7 +36,7 @@
             </n-card>
         </div>
         <div v-show="componentConfig?.testFiles?.length > 0" style="margin-bottom: 10px;">
-            <n-card title="静态文件测速">
+            <n-card title="Static file Speed Test">
                 <div v-for="i in componentConfig.testFiles">
                     <n-button text tag="a" :href="`speedtest-static/${i}.test`" target="_blank" type="primary">
                         {{ i }}
@@ -61,7 +61,7 @@ export default defineComponent({
             if (this.h5SpeedWorker !== null) {
                 this.h5SpeedWorker.postMessage('abort')
                 clearInterval(this.h5SpeedWorkerTimer)
-                this.h5SpeedtestButtonText = '开始测速'
+                this.h5SpeedtestButtonText = 'Start Speedtest'
                 this.h5SpeedWorker = null
                 if (force) {
                     this.h5Upload = '...'
@@ -71,7 +71,7 @@ export default defineComponent({
             }
             this.h5Upload = '...'
             this.h5Download = '...'
-            this.h5SpeedtestButtonText = '停止测速'
+            this.h5SpeedtestButtonText = 'Stop Speedtest'
             this.h5SpeedWorker = new Worker('speedtest_worker.js')
             // this
             this.h5SpeedWorker.onmessage = (e) => {
@@ -136,7 +136,7 @@ export default defineComponent({
             h5SpeedWorker: null,
             h5SpeedWorkerTimer: null,
             h5SpeedtestWorking: false,
-            h5SpeedtestButtonText: '开始测速',
+            h5SpeedtestButtonText: 'Start Speedtest',
             h5Upload: '...',
             h5Download: '...',
             h5SpeedtestDownloadSpeedChart: {
