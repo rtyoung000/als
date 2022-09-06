@@ -38,7 +38,7 @@ class Websocket
     }
 
     /**
-     * 发送数据并加入到发送队列中
+     * Send data and add it to the send queue
      *
      * @param mixed $data
      * @return void
@@ -157,7 +157,7 @@ class Websocket
                     break;
                 }
 
-                // 有节点数据
+                // Node Data
                 preg_match($regexs['Hop'], $content, $matches, PREG_OFFSET_CAPTURE, 0);
                 if (!empty($matches)) {
                     $packetCount = 0;
@@ -219,10 +219,10 @@ class Websocket
                         if ($geoData) {
                             $geo = [];
                             if (isset($geoData['country'])) {
-                                $geo[] = $geoData['country']['names']['zh-CN'] ?? $geoData['country']['names']['en'];
+                                $geo[] = $geoData['country']['names']['en'] ?? $geoData['country']['names']['en'];
                             }
                             if (isset($geoData['city'])) {
-                                $geo[] = $geoData['city']['names']['zh-CN'] ?? $geoData['city']['names']['en'];
+                                $geo[] = $geoData['city']['names']['en'] ?? $geoData['city']['names']['en'];
                             }
 
                             $geo = implode(' - ', $geo);
@@ -273,7 +273,7 @@ class Websocket
                 return $this->close($frame);
             }
 
-            // 心跳手动处理
+            // Heartbeat is handled manually
             if ($frame->opcode == 9) {
                 $pingFrame = new \Swoole\WebSocket\Frame;
                 $pingFrame->data = $frame->data;
