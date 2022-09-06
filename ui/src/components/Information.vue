@@ -3,16 +3,16 @@
         <n-card title="Server Information" hoverable>
             <n-space vertical>
                 <div v-show="location">
-                    服务器地点: {{ location }}
+                    Server Location: {{ location }}
                 </div>
                 <div v-show="publicIpv4">
-                    公网 IPv4 地址: <n-tag>{{ publicIpv4 }}</n-tag>
+                    Public IPv4 Address: <n-tag>{{ publicIpv4 }}</n-tag>
                 </div>
                 <div v-show="publicIpv6">
-                    公网 IPv6 地址: <n-tag> [{{ publicIpv6 }}]</n-tag>
+                    Public IPv6 Address: <n-tag> [{{ publicIpv6 }}]</n-tag>
                 </div>
                 <div v-show="clientIp">
-                    您当前的 IP 地址: <n-tag>{{ clientIp }}</n-tag>
+                    Private IP Address: <n-tag>{{ clientIp }}</n-tag>
                 </div>                
             </n-space>
             <!-- <n-progress type=" line" :percentage="100" :show-indicator="false" processing /> -->
